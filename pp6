@@ -1,0 +1,52 @@
+import turtle
+line = turtle.Turtle()
+lb = turtle.Screen()
+line.shape("turtle")
+lb.bgcolor("blue")
+
+while True:
+    print("1. Circle\n2. Square\n3. Octagon\n4. Reset\n5. Clear\n6. Exit")
+    bentuk = (input("Masukkan bentuk gambar [Circle, Square, Octagon, Reset, Exit] : ")).lower()
+    
+    match bentuk:
+        case "circle":
+            line.fillcolor("red")
+            line.begin_fill()
+            line.circle(50)
+            line.end_fill()
+            line.penup()
+            line.forward(100)
+            line.pendown()
+            continue
+        case "square":
+            line.fillcolor("yellow")
+            line.begin_fill()
+            for _ in range(4):
+                line.forward(80)
+                line.right(90)
+            line.end_fill()
+            line.penup()
+            line.forward(100)
+            line.pendown()
+            continue
+        case "octagon":
+            line.fillcolor("lime")
+            line.begin_fill()
+            for _ in range(8):
+                line.forward(40)
+                line.right(45)
+            line.end_fill()
+            line.penup()
+            line.forward(120)
+            line.pendown()
+            continue
+        case "reset":
+            line.reset()
+            continue
+        case "clear":
+            line.clear()
+        case "exit":
+            print("Tugas Pengenalan Pemrograman udah selesai!")
+            break
+        case _:
+            print("\nError, ulangi lagi!\n")
